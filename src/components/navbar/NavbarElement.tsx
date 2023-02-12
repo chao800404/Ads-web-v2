@@ -26,7 +26,11 @@ const NavbarElement = () => {
         {
           router.map((route , i) =>(
             <li className={`header__menu__list-${i}`} key={`${route.name}-${i}`}>
-              <Link href={Route.webDesign.path}>{route.name.replace('_'," ")}</Link>
+              <Link href={Route.webDesign.path}>
+                <a>
+                  {route.name.replace('_'," ")}
+                </a>
+              </Link>
             </li>
           ))
         }

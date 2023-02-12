@@ -13,11 +13,13 @@ export const HeaderElement = () =>{
   
   return (
     <header className="header">
-      <Link href={Route.home.path} className="header__logo">
-        <LogoSVG />
-        <div className="header__logo-text">
-          <LogoNameSVG />
-        </div>
+      <Link href={Route.home.path} >
+        <a className="header__logo">
+          <LogoSVG />
+          <div className="header__logo-text">
+            <LogoNameSVG />
+          </div>
+        </a>
       </Link>
       <div className="header__Marquee">
         <p className="header__Marquee__text">
