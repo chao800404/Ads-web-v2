@@ -1,7 +1,7 @@
 import { Url } from "url"
 
 type RouteTypes<T extends string> = Record<T, {name:string , path:string}>
-type RouteName = "home"|"webDesign" |"creatives"|"aboutus"
+type RouteName = "home"|"webDesign" |"creatives"|"marketing"
 
 export const Route:RouteTypes<RouteName> ={
   home:{
@@ -16,8 +16,8 @@ export const Route:RouteTypes<RouteName> ={
     name:"Creatives",
     path:"/Creatives"
   },
-  aboutus:{
-    name:"Aboutus",
-    path:"/Aboutus"
+  marketing:{
+    name:"Marketing",
+    path:"/Marketing"
   }
 }
