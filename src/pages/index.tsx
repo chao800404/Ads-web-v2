@@ -11,7 +11,7 @@ import { Layout } from '@/components/layout'
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
         <title>ShunJhin co.ltd</title>
         <link rel="shortcut icon" type="image/png" href="img/logo/logo.png"/>
@@ -24,6 +24,6 @@ export default function Home() {
       </Layout>
 
 
-    </div>
+    </>
   )
 }

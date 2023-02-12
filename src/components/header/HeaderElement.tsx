@@ -1,12 +1,8 @@
 import React from 'react'
-// import { NavbarElement } from '../navbar'
+import { NavbarElement } from '../navbar'
 import Link from 'next/link'
 import { LogoNameSVG , LogoSVG } from '../Logo'
 import { Route } from '@/config/route'
-import dynamic from 'next/dynamic'
-
-
-const NavbarElement = dynamic(()=> import('../navbar/NavbarElement'),{ssr:false})
 
 
 export const HeaderElement = () =>{

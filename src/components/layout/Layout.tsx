@@ -2,17 +2,31 @@ import React from 'react'
 import { FooterElement } from '../footer'
 import { HeaderElement } from '../header/HeaderElement'
 import { ScrollbarElement } from '../scrollbar'
-import Script from 'next/script'
+import { RobotElement } from '../robot'
+import dynamic from 'next/dynamic'
+
+
+
 
 type LayoutProps = {
   children:JSX.Element | JSX.Element[]
 }
 
+
+
+
 export const Layout:React.FC<LayoutProps> = function({children}){
+
+
+  React.useEffect(() => {
+    // @ts-ignore
+    import("@lottiefiles/lottie-player")
+  },[]);
 
   return (
     
-    <main>
+    <>
+      <RobotElement />
       <ScrollbarElement />
       <HeaderElement />
       <main className="container">
@@ -21,6 +35,6 @@ export const Layout:React.FC<LayoutProps> = function({children}){
       <footer className="footers">
         <FooterElement />
       </footer>
-    </main>
+    </>
   )
 }

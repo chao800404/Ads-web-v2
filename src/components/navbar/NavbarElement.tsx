@@ -3,13 +3,12 @@
 import React, { useRef } from 'react'
 import Link from 'next/link';
 import { Route } from '@/config/route';
-import "@lottiefiles/lottie-player";
 
-
-const NavbarElement = () => {
+export const NavbarElement = () => {
   const [toggle , setToggle] = React.useState(false)
   const router = Object.values(Route).filter(route => route.path !== Route.home.path)
   const handleOnClick = ()=> setToggle(toggle =>!toggle)
+  const ref = useRef(null);
 
   return (
     <nav className={`header__menu ${toggle && "header__menu--active" }`} onClick={handleOnClick}>
@@ -20,6 +19,7 @@ const NavbarElement = () => {
           background="transparent"  
           hover  
           speed="1"
+          ref={ref}
         />
       </div>
       <ul className="header__menu__list">
@@ -39,4 +39,3 @@ const NavbarElement = () => {
   )
 }
 
-export default NavbarElement
