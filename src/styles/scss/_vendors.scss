@@ -1,0 +1,41 @@
+// .swiper {
+//     margin-left: 0 !important;
+//     margin-right: 0 !important;
+//     overflow:visible !important;
+
+//     grid-column: 1 / -1;
+//     display: flex;
+// }
+
+
+
+
+// .swiper-slide {
+//     width: calc((100vw / 3) - 4rem) !important;
+//     border-radius: 1rem;
+// }
+
+
+
+
+
+.swiper-slide  {
+    overflow: visible !important;
+    height: 100% !important;
+}
+
+.swiper {
+    height: 100%;
+    width: 100% !important;
+    overflow: visible !important;
+    position: relative;
+}
+
+.swiper-wrapper{
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+

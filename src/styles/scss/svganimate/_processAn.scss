@@ -1,0 +1,127 @@
+.airplan-an-prev {
+    will-change: transform;
+    animation: airplanAn 14s ease-in 1;
+    @media (max-width:$bp-large){
+        animation:none;
+    }
+}
+
+.swiper-an-prev {
+    will-change: transform;
+    animation: swiperAn 13s ease 1;
+    @media (max-width:$bp-large){
+        animation:none;
+    }
+}
+
+.earth-an-prev{
+    will-change: transform;
+    animation: earthAn 14s ease 1;
+    @media (max-width:$bp-large){
+        animation:none;
+    }
+}
+
+
+.ourteam__heading-an-prev{
+    will-change: transform;
+    animation: ourHeadAn 9s ease 1;
+    @media (max-width:$bp-large){
+        animation:none;
+    }
+}
+
+// .swiper-an-prev{
+//     transform: translateX(100%);
+// }
+@keyframes ourHeadAn {
+    0%{
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@keyframes swiperAn {
+    0%{
+        transform: translate3D(100%,0,0);
+        opacity: 0;
+    }
+    70% {
+        transform: translate3D(100%,0,0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3D(0,0,0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes airplanAn {
+    0%{
+        transform: translate3D(-50rem,0,0);
+
+    }
+
+    50%{
+        transform: translate3D(100vw,0,0);
+        opacity: 1;
+    }
+
+    71%{
+        transform: translate3D(100vw,0,0);
+        opacity: 0;
+    }
+
+    72%{
+        transform: translate3D(0,0,0);
+        opacity: 0;
+    }
+
+    80%{
+        transform: translate3D(-20rem,0,0);
+        opacity: 0;
+    }
+    82%{
+        transform: translate3D(-20rem,0,0);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate3D(0rem,0,0);
+    }
+}
+
+@keyframes earthAn {
+    0%{
+        transform: translate3D(100%,-50%,0);
+    }
+    50% {
+        transform: translate3D(100%,-50%,0);
+    }
+
+    70%{
+        transform: translate3D(100%,0,0);
+    }
+
+    100% {
+        transform: translate3D(0,0,0);
+    }
+}
+
+
