@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
 import { useInView } from 'react-intersection-observer';
 
 
@@ -40,46 +40,40 @@ export const HomeOurTeamElement = (props:HomeOurTeamElementProps) => {
           slidesPerView={"auto"}
           centeredSlides={true}
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
+          navigation={true}
+          modules={[Navigation]}
           className="mySwiper"
           style={{
             gridColumn:"2 / 3", 
             display:"flex", 
           }}
         >
-            <SwiperSlide  className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
-              <div className="ourteam__content__img">
-                <Image objectFit="scale-down" layout='fill'  src={props.process[0].img} alt="swiperimg-${index}" />
-              </div>
-              <div className="ourteam__content__text">
-                {props.process[0].desc}
-              </div>
-              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            <SwiperSlide >
+              <figure className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
+                <img className="ourteam__content__img" src={props.process[0].img} alt={props.process[0].desc}  />
+                <figcaption className="ourteam__content__text">
+                  {props.process[1].desc}
+                </figcaption>
+              </figure>
+              
             </SwiperSlide>
-            <SwiperSlide  className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
-              <div className="ourteam__content__img">
-                <Image objectFit="scale-down" layout='fill'  src={props.process[1].img} alt="swiperimg-${index}" />
-              </div>
-              <div className="ourteam__content__text">
-                {props.process[1].desc}
-              </div>
-              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            <SwiperSlide>
+              <figure className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
+                <img className="ourteam__content__img" src={props.process[1].img} alt={props.process[1].desc}  />
+                <figcaption className="ourteam__content__text">
+                  {props.process[1].desc}
+                </figcaption>
+              </figure>
             </SwiperSlide>
-            <SwiperSlide  className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
-              <div className="ourteam__content__img">
-                <Image objectFit="scale-down" layout='fill'  src={props.process[2].img} alt="swiperimg-${index}" />
-              </div>
-              <div className="ourteam__content__text">
-                {props.process[2].desc}
-              </div>
-              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            <SwiperSlide >
+              <figure className="ourteam__content__narrative swiper-slide ourteam__swiper-slide">
+                  <img className="ourteam__content__img" src={props.process[2].img} alt={props.process[2].desc}  />
+                  <figcaption className="ourteam__content__text">
+                    {props.process[1].desc}
+                  </figcaption>
+                </figure>
             </SwiperSlide>
         </Swiper>
-        <div className="swiper-button-next ourteam__content-btn ourteam__content-next"></div>
-        <div className="swiper-button-prev ourteam__content-btn ourteam__content-prev"></div>
       </div>
 
       <div className={`ourteam__airplane ${inView && "ourteam__airplane-an airplan-an-prev"} `}>

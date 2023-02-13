@@ -2,13 +2,8 @@ import React , {useRef} from 'react'
 import { FaUserAlt }  from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
-// import { z } from "zod";
-
-// const ParseValue = z.object({
-//   userName:z.string(),
-//   userEmail: z.string().email(),
-//   userPhone:z.string().regex(/^09[0-9]{8}$/).transform(Number)
-// })
+import { parseEmail , parsePhoneNumb } from '../../utils/regex'
+import { mutation } from '../../utils/fetch'
 
 
 export const Form = () => {
@@ -17,7 +12,9 @@ export const Form = () => {
   const emailRef = useRef<HTMLInputElement>(null)
   const [status , setStatus] = React.useState(true)
   const [onSubmit , setOnSubmit] = React.useState(false)
-  const handleSubmit = (e:React.FormEvent)=> {
+  const [message , setMessage] =  React.useState('')
+
+  const handleSubmit = async(e:React.FormEvent)=> {
     e.preventDefault();
     if(userRef 
         && userRef.current 
@@ -28,15 +25,15 @@ export const Form = () => {
       const userName = userRef.current.value
       const userPhone = phoneRef.current.value
       const userEmail = emailRef.current.value
-      // const {success} = ParseValue.safeParse({
-      //   userName,
-      //   userPhone,
-      //   userEmail,
-      // })
-      // setStatus(success)
-      // if(success){
-      //   setOnSubmit(success)
-      // }
+      const resData = await mutation({userName, userPhone, userEmail})
+      if(resData){
+        if(resData.status === "success"){
+          setOnSubmit(true)
+        }else {
+          setStatus(false)
+          setMessage(resData.message || "請輸入正確資訊!!")
+        }
+      }
     }
   }
 
@@ -49,7 +46,7 @@ export const Form = () => {
         <>
           <div className="process__form__img astronaut-animate">
             <div className={`process__form__prompt ${ !status &&"process__form__prompt--active"}`}>
-                <p>請輸入正確資訊!!</p>
+                <p>{message}</p>
             </div>
             <lottie-player 
               className="header__hanburger_content"

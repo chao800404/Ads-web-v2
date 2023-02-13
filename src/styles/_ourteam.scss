@@ -52,10 +52,8 @@
         grid-row: 3 /span 1;
         display: grid;
         grid-template-columns: repeat(3, 33.33333%);
-        grid-template-rows: 2rem min-content 2rem;
         grid-column-gap: 2rem;
         z-index: 10;
-     
 
         &-swiper {
             grid-column: 1 / -1;
@@ -73,6 +71,11 @@
                 justify-self: start;
             }
         }
+
+        .swiper-button-next , .swiper-button-prev {
+            color:var(--color-secondary);
+        }
+
         
     
         &__narrative {      

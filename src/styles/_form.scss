@@ -63,15 +63,19 @@
         visibility: hidden;
         opacity: 0;
         transition: opactiy .2s;
+        display: flex;
 
         p{
-            position: absolute;
-            font-size: 2rem;
-            bottom:3rem;
-            left: 5rem;
-            z-index: 300;
-            color: var(--color-grey-light-1);
-
+          width:inherit;
+          text-align: center;
+          padding: 0.5rem;
+          font-size: 1.5rem;
+          z-index: 300;
+          left:50%;
+          transform: translate(-50% ,-30%);
+          color: var(--color-grey-light-1);
+          position: absolute;
+          bottom: 2rem;
         }
 
         &--active {
