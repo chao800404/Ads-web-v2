@@ -3,21 +3,33 @@ import Link from 'next/link'
 import {FeatureWebSVG} from '../layout/home/svg/introduce/FeatureWebSVG'
 import {FeatureMarketingSVG  }from '../layout/home/svg/introduce/FeatureMarketingSVG'
 import {FeatureCreatingSVG} from '../layout/home/svg/introduce/FeatureCreatingSVG'
+import {ServicesBaseSVG} from '../layout/home/svg/services/ServicesBaseSVG'
+import { InView, useInView } from 'react-intersection-observer';
+import {FeatureBox} from './FeatureBox'
+import Image from 'next/image'
 
+type TitleType =  Record<"title"|"subtitle" , string>
+export type ServicesType = Record<'title' | 'desc' | 'img' | "gif" , string>
 
-type HomeFeaturesElementProps = {
-  featureDatas: Record<"title"|"subtitle" |"desc"|"slug" , string> []
+export type HomeFeaturesElementProps = {
+  featureDatas:(TitleType & Record<'desc'|"slug",string> )[]
+  featureServiesDatas: TitleType & {
+    services: ServicesType[]
+  }
 }
 
 
 
-export const HomeFeaturesElement = ({featureDatas}:HomeFeaturesElementProps) => {
+export const HomeFeaturesElement = ({featureDatas , featureServiesDatas}:HomeFeaturesElementProps) => {
   const [activeN , setActiveN] = React.useState(0) 
+  const [servicesIndex , setServicesIndex]= React.useState<number | null>(null)
+  const [ref, inView] = useInView({threshold:0});
   const titles = featureDatas.map(item => item.subtitle)
+
 
   const curItem = featureDatas[activeN]
 
-  const render =  React.useCallback(()=>{
+  const render = React.useCallback(()=>{
     switch(activeN) {
       case 0:
         return <FeatureWebSVG />
@@ -27,8 +39,24 @@ export const HomeFeaturesElement = ({featureDatas}:HomeFeaturesElementProps) => 
         return <FeatureCreatingSVG />
     }
   },[activeN])
+  
+
+
+
+  const handleMouseEnter =(e:React.MouseEvent)=> {
+    const target = (e.target as HTMLDivElement).closest('.feature__server__content')
+    const index = target?.getAttribute('data-index')?.split('-')[1]
+    if(index && !Number.isNaN(parseInt(index))){
+      setServicesIndex(parseInt(index))
+    }
+  }
+
+
+  const handleMouseLeave = ()=> setServicesIndex(null)
+
 
   return (
+  
     <>
       <div className="feature">
         {
@@ -60,40 +88,50 @@ export const HomeFeaturesElement = ({featureDatas}:HomeFeaturesElementProps) => 
       </div>
 
 
-      {/* <div className="feature__server">
-        <h2 className="heading-2 feature__server__heading">
-          <span>${this._organizeText(
-            this._data.features__server.title,
-            0,
-            3
-          )}</span>
-          <span>${this._organizeText(
-            this._data.features__server.title,
-            3,
-            5
-          )}</span>
-          <span>${this._data.features__server.ch_title}</span> 
+      <div className="feature__server" ref={ref}>
+        <h2 className="heading-2 feature__server__heading" 
+            style={{
+              transform: inView ?"translateX(0rem)":"translateX(-10rem)",
+              opacity: inView ? 1:0 , 
+              visibility: inView ? "visible":"hidden"
+            }}>
+          <span>{featureServiesDatas.title.split(' ').filter((_,i)=> i <3).join(" ")}</span>
+          <span>{featureServiesDatas.title.split(' ').filter((_,i)=> i >2).join(" ")}</span>
+          <span>{featureServiesDatas.subtitle}</span> 
         </h2>
+        {
+          featureServiesDatas.services.map((item , i)=> (
+            <FeatureBox 
+              key={`${item.desc}_${i}`} 
+              index={i} 
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              {...item} />
+          ))
+        }
 
-
-      ${this._markupServer(this._data.features__server.servers)}
-
-      <div className="feature__server__img feature_animate-prev">
-        <div className="feature__server__img-bg ">
-          ${adsSvg}
-        </div>
-
-        ${this._imgSrc
-          .map(
-            (img, index) =>
-              `<img className="feature__server__img-example feature__server__img-example-${
-                index + 1
-              }" src="${img}" alt="example${index + 1}">`
-          )
-          .join("")}
-          <img className="feature__server__img-init" src="${googleAdsLogo}" alt="Ads Logo">
-        </div>
-      </div> */}
+        <div className={`feature__server__img feature_animate-prev ${inView && "feature_animate-end"} `}>
+          <div className="feature__server__img-bg ">
+            <ServicesBaseSVG />
+          </div>
+          <div className={`feature__server__img-init`} >
+            {servicesIndex === null ? 
+              <Image alt="good ads" objectFit="scale-down" layout="fill" src="/img/google__service__logo/ads-logo.png" />: 
+              featureServiesDatas.services.map((item, index) => {
+                return index === servicesIndex && (
+                  <Image
+                    key={item.desc + index}
+                    src={item.gif} 
+                    alt={item.title}
+                    objectFit="scale-down"
+                    layout="fill" 
+                />
+                )
+              })
+            }
+          </div>
+          </div> 
+      </div>
     </>
   )
 }

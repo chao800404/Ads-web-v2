@@ -35,16 +35,22 @@ export const HOME_FEATURES = {
     subtitle: "創建您需要的廣告素材",
     services: [
         {
-            "title":"Static 靜態式廣告",
-            "text": "導入最多精準流量，置頂/置底橫幅，關注度更高。"
+            title:"Static 靜態式廣告",
+            desc: "導入最多精準流量，置頂/置底橫幅，關注度更高。",
+            img:"/img/Ads__type/type-1.svg",
+            gif:"/img/Ads__type/ads_example-3.webp"
         },
         {
-            "title":"HTML5 互動式廣告",
-            "text": "利用互動式媒體來推銷以及影響消費者購買決策，讓彼此間複雜並有維度的對話變為可能。"
+            title:"HTML5 互動式廣告",
+            desc: "利用互動式媒體來推銷以及影響消費者購買決策，讓彼此間複雜並有維度的對話變為可能。",
+            img:"/img/Ads__type/type-2.svg",
+            gif:"/img/Ads__type/ads_example-1.gif"
         },
         {
-            "title":"Motion 影音式廣告",
-            "text": "製作影片廣告活動後，可以獲得更高的銷售量、提升網站流量、為您的商家打響知名度等等。"
+            title:"Motion 影音式廣告",
+            desc: "製作影片廣告活動後，可以獲得更高的銷售量、提升網站流量、為您的商家打響知名度等等。",
+            img:"/img/Ads__type/type-3.svg",
+            gif:"/img/Ads__type/ads_example-2.gif"
         }
     ]
   }

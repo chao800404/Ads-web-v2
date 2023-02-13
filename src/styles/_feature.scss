@@ -398,12 +398,14 @@
     &__img-init {
         width: 20%;
         position: absolute;
-        top: 31%;
-        left: 12%;
+        top: 20%;
+        left: 11.5%;
         transition: all 1s cubic-bezier(.6,-0.93,.43,1.72);
+        height: 17rem;
 
         @media  (max-width:$bp-large){
-            left: 13%;
+            left: 13.5%;
+            top: 18%;
         }
 
         @media  (max-width:$bp-smallest){
@@ -506,11 +508,13 @@
     }
 
     &--type {
-        
+        position: relative;
         transition: inherit;
+        height:33rem;
+        border-radius: 2.2rem;
+        overflow: hidden;
 
         svg {
-            border-radius: 1rem;
             box-shadow: .5rem .5rem 3rem rgba(rgb(0, 0, 0),.3);
         }
 
@@ -542,55 +546,6 @@
         transform: scale(1.05);
     }
 
-    &__content:hover ~ &__img> &__img-init{
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    &__content-1:hover ~ &__img> &__img-example-3 {
-        z-index: 20;
-        transform: scale(1);
-        visibility: visible;
-        opacity: 1;
-
-        @media  (max-width:$bp-large){
-            transform: scale(.65);
-        }
-
-        @media  (max-width:$bp-smallest){
-            transform: none;
-        }
-    }
-
-    &__content-2:hover ~ &__img> &__img-example-1 {
-        z-index: 20;
-        transform: scale(1);
-        visibility: visible;
-        opacity: 1;
-
-        @media  (max-width:$bp-large){
-            transform: scale(.65);
-        }
-
-        @media  (max-width:$bp-smallest){
-            transform: none;
-        }
-    }
-
-    &__content-3:hover ~ &__img> &__img-example-2 {
-        z-index: 20;
-        transform: scale(1);
-        visibility: visible;
-        opacity: 1;
-
-        @media  (max-width:$bp-large){
-            transform: scale(.65);
-        }
-
-        @media  (max-width:$bp-smallest){
-            transform: none;
-        }
-    }
 
     
 }

@@ -10,7 +10,9 @@ export const HomeElement = () => {
         <HomeBannerElement {...HOME_BANNER} />
       </section>
       <section className="features">
-        <HomeFeaturesElement featureDatas={HOME_FEATURES.introduce} />
+        <HomeFeaturesElement 
+          featureDatas={HOME_FEATURES.introduce} 
+          featureServiesDatas={HOME_FEATURES.features__services} />
       </section> 
     </>
   )
