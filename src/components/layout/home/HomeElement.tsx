@@ -1,8 +1,9 @@
 import React from 'react'
 import { HomeBannerElement } from '@/components/Banner'
-import {HOME_BANNER ,  HOME_FEATURES , HOME_OURTEAN} from './data'
+import { HOME_BANNER ,  HOME_FEATURES , HOME_OURTEAN , HOME_CONSULTATION } from './data'
 import { HomeFeaturesElement } from '@/components/features'
 import { HomeOurTeamElement } from '@/components/ourTeam'
+import { ConsultationElement } from "@/components/consultation"
 
 export const HomeElement = () => {
   return (
@@ -19,7 +20,7 @@ export const HomeElement = () => {
         <HomeOurTeamElement {...HOME_OURTEAN} />
       </section>
       <section className="processes">
-
+        <ConsultationElement  {...HOME_CONSULTATION} />
       </section> 
     </>
   )

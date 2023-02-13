@@ -77,3 +77,49 @@ export const HOME_OURTEAN = {
     }
   ]
 }
+
+
+export const HOME_CONSULTATION = {
+  title:"Consultation and evaluation process",
+  progress: [
+    ["12%","諮詢表單填寫","Degree of Dompletion"],
+    ["25%","專人預約完成","Appointment completed"],
+    ["50%","網站網域提供","Website domain provided"],
+    ["65%","網站資訊確認","information confirmation"],
+    ["80%","串接工具確認","API confirmation"],
+    ["100%","免費諮詢評估服務","Free consultation"]
+  ],
+  consult_title:"諮詢評估流程",
+  consult_content:[
+    {
+        title: "諮詢表單填寫",
+        desc: "官網填單，快速諮詢有專人為您解釋",
+        img: '/img/consult/consult-1.svg'
+    },
+    {
+        title: "專人預約完成",
+        desc: "致電確認詳細確認時間 並提供所需資料 使顧客能先行準備。",
+        img: '/img/consult/consult-2.svg'
+    },
+    {
+        title: "網站網域提供",
+        desc: "依照顧客需求 評估網頁功能性並給予建議",
+        img: '/img/consult/consult-3.svg'
+    },
+    {
+        title: "網站資訊確認",
+        desc: "確認網站各項資訊是否正確，及安全性建構性是否完整。",
+        img: '/img/consult/consult-4.svg'
+    },
+    {
+        title: "串接工具確認",
+        desc: "各項API串接功能，確認是否有各類功能需求。",
+        img: '/img/consult/consult-5.svg'
+    },
+    {
+        title: "免費諮詢評估",
+        desc: "免費評估服務以及專業性建議",
+        img: '/img/consult/consult-6.svg'
+    }
+]
+}

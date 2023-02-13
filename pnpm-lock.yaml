@@ -10,10 +10,12 @@ specifiers:
   next: 12.3.1
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.7.1
   react-intersection-observer: ^9.4.2
   sass: ^1.39.2
   swiper: ^9.0.4
   typescript: 4.9.5
+  zod: ^3.20.6
 
 dependencies:
   '@lottiefiles/lottie-player': 1.7.1
@@ -25,10 +27,12 @@ dependencies:
   next: 12.3.1_v2oaanvfrlbmzxtxqr4ev6xhjq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.7.1_react@18.2.0
   react-intersection-observer: 9.4.2_react@18.2.0
   sass: 1.39.2
   swiper: 9.0.4
   typescript: 4.9.5
+  zod: 3.20.6
 
 packages:
 
@@ -1896,6 +1900,14 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-intersection-observer/9.4.2_react@18.2.0:
     resolution: {integrity: sha512-AdK+ryzZ7U9ZJYttDUZ8q2Am3nqE0exg5Ryl5Y124KeVsix/1hGZPbdu58EqA98TwnzwDNWHxg/kwNawmIiUig==}
     peerDependencies:
@@ -2309,4 +2321,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
     dev: false

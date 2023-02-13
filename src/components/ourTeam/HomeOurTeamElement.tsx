@@ -22,7 +22,6 @@ type HomeOurTeamElementProps =  {
 
 export const HomeOurTeamElement = (props:HomeOurTeamElementProps) => {
 
-  const [swiperRef, setSwiperRef] = React.useState(null);
   const [ref, inView] = useInView({threshold:0 , triggerOnce:true});
 
   return (
