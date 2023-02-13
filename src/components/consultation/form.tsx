@@ -2,13 +2,13 @@ import React , {useRef} from 'react'
 import { FaUserAlt }  from 'react-icons/fa'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { MdEmail } from 'react-icons/md'
-import { z } from "zod";
+// import { z } from "zod";
 
-const ParseValue = z.object({
-  userName:z.string(),
-  userEmail: z.string().email(),
-  userPhone:z.string().regex(/^09[0-9]{8}$/).transform(Number)
-})
+// const ParseValue = z.object({
+//   userName:z.string(),
+//   userEmail: z.string().email(),
+//   userPhone:z.string().regex(/^09[0-9]{8}$/).transform(Number)
+// })
 
 
 export const Form = () => {
@@ -28,19 +28,17 @@ export const Form = () => {
       const userName = userRef.current.value
       const userPhone = phoneRef.current.value
       const userEmail = emailRef.current.value
-      const {success} = ParseValue.safeParse({
-        userName,
-        userPhone,
-        userEmail,
-      })
-      setStatus(success)
-      if(success){
-        setOnSubmit(success)
-      }
+      // const {success} = ParseValue.safeParse({
+      //   userName,
+      //   userPhone,
+      //   userEmail,
+      // })
+      // setStatus(success)
+      // if(success){
+      //   setOnSubmit(success)
+      // }
     }
   }
-
-  console.log(onSubmit)
 
   const handleOnChange = ()=>setStatus(true)
 
