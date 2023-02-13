@@ -116,7 +116,13 @@ export const HomeFeaturesElement = ({featureDatas , featureServiesDatas}:HomeFea
           </div>
           <div className={`feature__server__img-init`} >
             {servicesIndex === null ? 
-              <Image alt="good ads" objectFit="scale-down" layout="fill" src="/img/google__service__logo/ads-logo.png" />: 
+              <Image 
+                alt="good ads" 
+                objectFit="scale-down" 
+                layout="fill" 
+                unoptimized={true} 
+                src="/img/google__service__logo/ads-logo.png" 
+              />: 
               featureServiesDatas.services.map((item, index) => {
                 return index === servicesIndex && (
                   <Image
@@ -125,6 +131,7 @@ export const HomeFeaturesElement = ({featureDatas , featureServiesDatas}:HomeFea
                     alt={item.title}
                     objectFit="scale-down"
                     layout="fill" 
+                    unoptimized={true}
                 />
                 )
               })

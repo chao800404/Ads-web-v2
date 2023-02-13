@@ -55,3 +55,25 @@ export const HOME_FEATURES = {
     ]
   }
 }
+
+
+export const HOME_OURTEAN = {
+  title:"Improve the process",
+  subtitle: "擁有最豐富的專業團隊，提供專業問題解決方案",
+  airplaneImg:"/img/ourteam/airplane.webp",
+  earthImg:"/img/ourteam/earth.webp",
+  process: [
+    {
+      img:"/img/ourteam/search_icon.png",
+      desc:"資料收集彙整客戶需求，給予客戶最完整的資料報告並與客戶討論，最終給予設計部門建議開會做出相對應廣告之產品。",
+    },
+    {
+      img:"/img/ourteam/web_icon.png",
+      desc:"接受來自客戶的網路資訊資料，予以評估及檢查，並給予執行層面上的建議，提供資訊部協助處理。",
+    },
+    {
+      img:"/img/ourteam/code_icon.png",
+      desc:"傾聽客戶需求結合資料分析，給予網站或者廣告素材的規劃建議，並結合素材呈現需求給予推薦格式。Ex MP4、Gif 、html5等。"
+    }
+  ]
+}
