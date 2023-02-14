@@ -10,7 +10,7 @@ import { useInView } from 'react-intersection-observer';
 
 type SwipperBoxProps = Record<"img"|"desc" , string>
 
-type HomeOurTeamElementProps =  {
+export type HomeOurTeamElementProps =  {
   title:string,
   subtitle:string,
   airplaneImg:string

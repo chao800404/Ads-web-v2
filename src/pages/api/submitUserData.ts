@@ -1,6 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-
+import nodemailer  from 'nodemailer'
 import { z , ZodError  } from "zod";
 
 const reg_0 = /^(0\d+)-(\d{8})(?:(?:#)(\d+))?$/ 
@@ -28,7 +27,7 @@ const errRes = (res:NextApiResponse , message?:string)=>(
 )
 
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -36,15 +35,49 @@ export default function handler(
   try {
     if(req.method === "POST") {
       const parseUser = ParseValue.parse(userData)
-        res.status(200).json({
-          status:"success",
-          data:parseUser
-        })
+
+
+      let transporter =  nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: "Chuck@shunjhin.com", 
+          pass: "rtoktoxxkofijrbd",
+        },
+      });
+
+      const mail = {
+        from: "Chuck@shunjhin.com 😊", 
+        to: "Chuck@shunjhin.com", 
+        subject: "有新客戶到!!", 
+        text: "有新客戶到!!", 
+        html: `
+          <b>名稱:${parseUser.userName} 🫡 </b><br>
+          <b>電話:${parseUser.userPhone} ☎️ </b><br>
+          <b>信箱:${parseUser.userEmail} 📧 </b><br>
+        `, 
+      }
+
+      let info = transporter.sendMail(mail , (err , info)=>{
+        if(err){
+          console.log(err)
+        }else {
+          console.log(info)
+        }
+      });
+  
+
+      res.status(200).json({
+        status:"success",
+        data:parseUser
+      })
     }
   }
 
   catch(err){
     const errMessage = (err as ZodError).issues.map(err => err.message)[0]
+    console.log(err)
     errRes(res , errMessage)
   }
 }

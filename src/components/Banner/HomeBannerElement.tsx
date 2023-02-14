@@ -3,7 +3,7 @@ import { Context } from '@/store/useContext'
 
 
 
-type  HomeBannerElementProps = Record<"title" | 'subtitle' | 'desc' | 'svgUrl' , string>
+export type HomeBannerElementProps = Record<"title" | 'subtitle' | 'desc' | 'svgUrl' , string>
 
 
 export const HomeBannerElement:React.FC<HomeBannerElementProps> = ({title , subtitle, desc , svgUrl}) => {

@@ -4,11 +4,13 @@ specifiers:
   '@lottiefiles/lottie-player': ^1.7.1
   '@lottiefiles/react-lottie-player': ^3.5.2
   '@types/node': 18.13.0
+  '@types/nodemailer': ^6.4.7
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
   eslint: 8.34.0
   eslint-config-next: 13.1.6
   next: 12.3.1
+  nodemailer: ^6.9.1
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.7.1
@@ -23,11 +25,13 @@ dependencies:
   '@lottiefiles/lottie-player': 1.7.1
   '@lottiefiles/react-lottie-player': 3.5.2_react@18.2.0
   '@types/node': 18.13.0
+  '@types/nodemailer': 6.4.7
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
   eslint: 8.34.0
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
   next: 12.3.1_v2oaanvfrlbmzxtxqr4ev6xhjq
+  nodemailer: 6.9.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
@@ -289,6 +293,12 @@ packages:
 
   /@types/node/18.13.0:
     resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
+    dev: false
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 18.13.0
     dev: false
 
   /@types/pako/1.0.4:
@@ -1714,6 +1724,11 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /normalize-path/3.0.0:
