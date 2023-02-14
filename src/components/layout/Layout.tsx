@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FooterElement } from '../footer'
 import { HeaderElement } from '../header/HeaderElement'
 import { ScrollbarElement } from '../scrollbar'
 import { RobotElement } from '../robot'
-import ContextProvider from '@/store/useContext'
-
+import ContextProvider ,{Context} from '@/store/useContext'
+import { Player } from '@lottiefiles/react-lottie-player';
 
 
 
@@ -16,12 +16,41 @@ type LayoutProps = {
 
 
 export const Layout:React.FC<LayoutProps> = function({children}){
+  const [importLoad , setImportLoad] = React.useState(false)
+  const [onLoad , setOnLoad] = React.useState(false)
 
 
+
+
+  
   React.useEffect(() => {
-    // @ts-ignore
     import("@lottiefiles/lottie-player")
-  },[]);
+    const timeout = setTimeout(() =>setOnLoad(true),500)
+    return ()=> clearTimeout(timeout)
+  }, [importLoad]);
+
+
+
+
+  if(!onLoad){
+    return (
+      <div style={{
+        width:"100vw", 
+        height:"100vh", 
+        display:"flex", 
+        alignItems:"center", 
+        justifyContent:"center",
+        backgroundColor:"#212936"
+          }}>
+        <Player
+          autoplay
+          loop
+          src="https://assets5.lottiefiles.com/packages/lf20_nmwkxjsf.json"
+          style={{ height: '300px', width: '300px' }}
+        />
+      </div>
+    )
+  }
 
   return (
     

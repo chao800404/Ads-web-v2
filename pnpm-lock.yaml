@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@lottiefiles/lottie-player': ^1.7.1
+  '@lottiefiles/react-lottie-player': ^3.5.2
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
@@ -20,6 +21,7 @@ specifiers:
 
 dependencies:
   '@lottiefiles/lottie-player': 1.7.1
+  '@lottiefiles/react-lottie-player': 3.5.2_react@18.2.0
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.10
@@ -100,6 +102,15 @@ packages:
       lottie-web: 5.10.2
       pako: 2.1.0
       resize-observer-polyfill: 1.5.1
+    dev: false
+
+  /@lottiefiles/react-lottie-player/3.5.2_react@18.2.0:
+    resolution: {integrity: sha512-vrvRgqXimIpM5GUzBP6aksZjCdLUGxTL3FZ+2NJzLmKkPL3xDEX7oCftqPSerFz1AXVwIur3FaZbWL+XyagXWQ==}
+    peerDependencies:
+      react: 16 - 18
+    dependencies:
+      lottie-web: 5.10.2
+      react: 18.2.0
     dev: false
 
   /@next/env/12.3.1:
