@@ -59,13 +59,7 @@ export default async function handler(
         `, 
       }
 
-      let info = transporter.sendMail(mail , (err , info)=>{
-        if(err){
-          console.log(err)
-        }else {
-          console.log(info)
-        }
-      });
+      await transporter.sendMail(mail)
   
 
       res.status(200).json({
