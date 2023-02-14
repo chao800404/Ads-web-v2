@@ -638,6 +638,7 @@
         margin: 20rem auto 0rem auto;
         grid-column-gap: 3rem;
         grid-row-gap: 15rem;
+        margin-bottom: 10rem;
 
         @media  (max-width:$bp-medium){
             margin-bottom: 10rem;
@@ -725,12 +726,12 @@
 
 
         &:nth-child(4){
-           
+
             &:after {
                 will-change: transform;
                 @extend %arror;
                 top:25%;
-                right: -60%;
+                right: -40%;
             }
             &:hover {
                 &:after{
@@ -774,7 +775,9 @@
         width: 25rem;
         grid-column: 1 / -1;
         grid-row: 1 / span 1;
-
+        height: 30rem;
+        position: relative;
+        justify-self: center;
     }
 
    

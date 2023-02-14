@@ -12,6 +12,7 @@ specifiers:
   react-dom: 18.2.0
   react-icons: ^4.7.1
   react-intersection-observer: ^9.4.2
+  react-use-window-scroll: ^1.1.1
   sass: ^1.39.2
   swiper: ^9.0.4
   typescript: 4.9.5
@@ -29,6 +30,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
   react-intersection-observer: 9.4.2_react@18.2.0
+  react-use-window-scroll: 1.1.1_biqbaboplfbrettd7655fr4n2y
   sass: 1.39.2
   swiper: 9.0.4
   typescript: 4.9.5
@@ -1920,6 +1922,17 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
+  /react-use-window-scroll/1.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-MChXBqf3Wf85ozkN1TCdUixHAHH2URXCM//kGO6GJlO+ojXUze6BhoixiG4swoaRbdz6aRe674eQXv+TnUnM5w==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      smoothscroll-polyfill: 0.4.4
+    dev: false
+
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -2060,6 +2073,10 @@ packages:
   /slash/4.0.0:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
+    dev: false
+
+  /smoothscroll-polyfill/0.4.4:
+    resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==}
     dev: false
 
   /source-map-js/1.0.2:

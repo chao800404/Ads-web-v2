@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 import {FeatureWebSVG} from '../layout/home/svg/introduce/FeatureWebSVG'
 import {FeatureMarketingSVG  }from '../layout/home/svg/introduce/FeatureMarketingSVG'
@@ -7,6 +7,7 @@ import {ServicesBaseSVG} from '../layout/home/svg/services/ServicesBaseSVG'
 import { InView, useInView } from 'react-intersection-observer';
 import {FeatureBox} from './FeatureBox'
 import Image from 'next/image'
+import { Context } from '@/store/useContext'
 
 type TitleType =  Record<"title"|"subtitle" , string>
 export type ServicesType = Record<'title' | 'desc' | 'img' | "gif" , string>
@@ -25,6 +26,7 @@ export const HomeFeaturesElement = ({featureDatas , featureServiesDatas}:HomeFea
   const [servicesIndex , setServicesIndex]= React.useState<number | null>(null)
   const [ref, inView] = useInView({threshold:0});
   const titles = featureDatas.map(item => item.subtitle)
+  const {handleScrollForm} = useContext(Context);
 
 
   const curItem = featureDatas[activeN]
@@ -79,7 +81,7 @@ export const HomeFeaturesElement = ({featureDatas , featureServiesDatas}:HomeFea
             </h2>
             <p className="feature__content-text">{curItem.desc}</p>
           </figure>
-          <button className="feature__btn feature__btn-1 btn-1">Contact Us</button>
+          <button className="feature__btn feature__btn-1 btn-1" onClick={()=>handleScrollForm()}>Contact Us</button>
           <button className="feature__btn feature__btn-2 btn-1 feature__anchor">
             <Link href={curItem.slug}>
               <a href="#${ANCHOR[1]}">Learn More</a>

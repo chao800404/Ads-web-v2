@@ -1,6 +1,7 @@
 import React from 'react'
 import { WebDesignBanner } from '@/components/Banner'
-import { WEBDESIGN_BANNER } from '@/components/layout/webDesign/data'
+import { WEBDESIGN_BANNER ,WEBDESIGN_FEATURES } from '@/components/layout/webDesign/data'
+import { WebDesignFeaturesElement } from '@/components/features'
 
 export const WebDesignElement = function() {
   return (
@@ -9,7 +10,7 @@ export const WebDesignElement = function() {
         <WebDesignBanner {...WEBDESIGN_BANNER} />
       </section>
       <section className="features">
-  
+        <WebDesignFeaturesElement {...WEBDESIGN_FEATURES} />
       </section> 
     </>
   )

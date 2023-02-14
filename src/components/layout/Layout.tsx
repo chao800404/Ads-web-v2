@@ -3,7 +3,7 @@ import { FooterElement } from '../footer'
 import { HeaderElement } from '../header/HeaderElement'
 import { ScrollbarElement } from '../scrollbar'
 import { RobotElement } from '../robot'
-import dynamic from 'next/dynamic'
+import ContextProvider from '@/store/useContext'
 
 
 
@@ -25,7 +25,7 @@ export const Layout:React.FC<LayoutProps> = function({children}){
 
   return (
     
-    <>
+    <ContextProvider>
       <RobotElement />
       <ScrollbarElement />
       <HeaderElement />
@@ -35,6 +35,6 @@ export const Layout:React.FC<LayoutProps> = function({children}){
       <footer className="footers">
         <FooterElement />
       </footer>
-    </>
+    </ContextProvider>
   )
 }

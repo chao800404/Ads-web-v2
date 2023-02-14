@@ -40,7 +40,7 @@ export const Form = () => {
   const handleOnChange = ()=>setStatus(true)
 
   return (
-    <form className="process__form" onSubmit={handleSubmit}>
+    <form id="send_form" className="process__form" onSubmit={handleSubmit}>
       {
         !onSubmit ? 
         <>

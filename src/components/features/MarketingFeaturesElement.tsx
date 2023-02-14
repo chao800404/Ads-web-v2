@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
+import { Context } from '@/store/useContext'
 
 
 type MarketingFeaturesProps = {
@@ -15,9 +16,8 @@ type MarketingFeaturesProps = {
 }
 
 export const MarketingFeaturesElement = ({data}:MarketingFeaturesProps) => {
-  
 
-
+  const {handleScrollForm} = useContext(Context);
 
   return (
     <div className="adsFeature">
@@ -45,7 +45,7 @@ export const MarketingFeaturesElement = ({data}:MarketingFeaturesProps) => {
           <span>{data.tips[1]}</span>
         </p>
       </div>
-      <button className="btn-3 adsFeature_btn" >立刻預約</button>
+      <button className="btn-3 adsFeature_btn" onClick={()=>handleScrollForm()} >立刻預約</button>
     </div>
   )
 }

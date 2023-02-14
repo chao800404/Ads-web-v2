@@ -6,20 +6,26 @@ import React, { MouseEvent, useRef } from "react";
 export const RobotElement = ()=>{
   const {ref , toggle, handleToggleSet} =  useWindowPointerToggle<HTMLDivElement>()
   const handleOnClick = ()=> handleToggleSet(!toggle)
+  const [pos , setPos] = React.useState(0)
+  const [delayPos , setDelayPos] = React.useState(0)
   
   
   React.useEffect(()=>{
-
     const handleOnScroll=(e:Event)=>{
-     
+      const position = window.pageYOffset;
+      setPos(position)
     }
-
     window.addEventListener('scroll',handleOnScroll)
     return ()=> window.removeEventListener('scroll',handleOnScroll)
   },[])
 
+  React.useEffect(()=>{
+    const timeout =  setTimeout(()=>setDelayPos(pos),500)
+    return ()=> clearTimeout(timeout)
+  },[pos])
+
   return (
-    <div className="message message--active--2" onClick={handleOnClick} ref={ref}>
+    <div className={`message ${pos !== delayPos && "message--active--2"}`} onClick={handleOnClick} ref={ref}>
       <div className={`message__container ${toggle && "message--active" }`}>
         <div className="message__close">
           <lottie-player  

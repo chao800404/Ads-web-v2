@@ -1,10 +1,15 @@
-import React from 'react'
+import React , {useContext} from 'react'
+import { Context } from '@/store/useContext'
+
 
 
 type  HomeBannerElementProps = Record<"title" | 'subtitle' | 'desc' | 'svgUrl' , string>
 
 
 export const HomeBannerElement:React.FC<HomeBannerElementProps> = ({title , subtitle, desc , svgUrl}) => {
+
+  const {handleScrollForm} = useContext(Context);
+
   return (
     <div className="demo">
       <div className="demo__text">
@@ -15,7 +20,11 @@ export const HomeBannerElement:React.FC<HomeBannerElementProps> = ({title , subt
         <p>{desc}</p>
       </div>
       
-      <button className="btn demo__btn get__start"><a href="#">Get Started</a></button>
+      <button className="btn demo__btn get__start" onClick={()=>handleScrollForm()}>
+        <a href="#">
+          Get Started
+        </a>
+      </button>
 
       <div className="demo__svg demo__an">
         <lottie-player
