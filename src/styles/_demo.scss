@@ -317,6 +317,8 @@
     &-img {
         width: 55vw;
         align-self: start;
+        position: relative;
+        height:60rem;
 
         @media only screen and (max-width:$bp-larger){
             width: 80vw;
@@ -327,6 +329,7 @@
 
         @media only screen and (max-width:$bp-small){
             width: 100vw;
+            height:40rem;
         }
 
         

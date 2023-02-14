@@ -1,1 +1,5 @@
 export * from './Layout'
+export * from './home'
+export * from './marketing'
+export * from './webDesign'
+export * from './creatives'

@@ -9,9 +9,6 @@
     backdrop-filter: blur(2rem);
     -webkit-backdrop-filter: blur(2rem);
     transform-origin: right bottom;
-    transform: scale(0);
-    visibility: hidden;
-    opacity: 0;
     
 
     display: grid;
@@ -159,8 +156,3 @@
 }
 
 
-.popup--active {
-    visibility: visible;
-    transform: scale(1);
-    opacity: 1;
-}
