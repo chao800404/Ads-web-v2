@@ -1,7 +1,7 @@
 Ads-web-v2 
 ---
-[*] nextjs
-[*] static
-[*] nodemailer
-[*] lottiefiles
-[*] sass
+- [x] nextjs
+- [x] static
+- [x] nodemailer
+- [x] lottiefiles
+- [x] sass
