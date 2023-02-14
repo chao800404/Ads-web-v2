@@ -27,9 +27,10 @@ export const ContextProvider = (props:{children:JSX.Element[]}) => {
     })
   },[router, scrollBy])
 
-  const handleOnLoad = ()=>{
+  const handleOnLoad = React.useCallback(()=>{
     setOnLoad(true)
-  }
+    console.log('run')
+  },[])
 
   return (
     <Context.Provider
