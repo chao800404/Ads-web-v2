@@ -42,14 +42,14 @@ export default async function handler(
         port: 587,
         secure: false,
         auth: {
-          user: "Chuck@shunjhin.com", 
-          pass: "rtoktoxxkofijrbd",
+          user: process.env.USER_EMAIL, 
+          pass: process.env.USER_PASSWORD ,
         },
       });
 
       const mail = {
-        from: "Chuck@shunjhin.com 😊", 
-        to: "Chuck@shunjhin.com", 
+        from: `${process.env.USER_EMAIL} 😊`, 
+        to: `${process.env.USER_EMAIL}`, 
         subject: "有新客戶到!!", 
         text: "有新客戶到!!", 
         html: `

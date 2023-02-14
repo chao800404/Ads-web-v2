@@ -25,7 +25,7 @@ export const Layout:React.FC<LayoutProps> = function({children}){
   
   React.useEffect(() => {
     import("@lottiefiles/lottie-player")
-    const timeout = setTimeout(() =>setOnLoad(true),500)
+    const timeout = setTimeout(() =>setOnLoad(true),800)
     return ()=> clearTimeout(timeout)
   }, [importLoad]);
 
