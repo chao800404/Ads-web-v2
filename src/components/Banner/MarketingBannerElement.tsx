@@ -18,7 +18,7 @@ export const MarketingBannerElement = ({data}: MarketingBannerProps) => {
       }
       <div className="template_demo-container webAdsDemo_container">
         <div className="webAdsDemo-img">
-          <Image onLoadedData={()=>setOnLoad(true)} layout='fill' objectFit="scale-down"  src={data.img} alt={data.title} />
+          <Image onLoadCapture={()=> setOnLoad(true)} layout='fill' objectFit="scale-down"  src={data.img} alt={data.title} />
         </div>
       </div>
       <h1 className="heading-1--1 webAdsDemo-title">
