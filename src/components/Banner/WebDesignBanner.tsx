@@ -23,7 +23,6 @@ export const WebDesignBanner = ({title , svgUrl}:WebDesignBannerProps) => {
       <div className="webDesign_radar-img radar-img_an">
         <Player
           onEvent={(e)=> {
-            console.log(e === 'load')
             e === 'load' && setOnLoad(true)
           }}
           src="https://assets9.lottiefiles.com/packages/lf20_ofocdzqf.json"  

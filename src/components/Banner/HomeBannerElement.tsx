@@ -37,7 +37,6 @@ export const HomeBannerElement:React.FC<HomeBannerElementProps> = ({title , subt
       <div className="demo__svg demo__an">
         <Player
           onEvent={(e)=> {
-            console.log(e === 'load')
             e === 'load' && setOnLoad(true)
           }}
           style={{width:'100%' , height:"100%"}}

@@ -71,7 +71,6 @@ export default async function handler(
 
   catch(err){
     const errMessage = (err as ZodError).issues.map(err => err.message)[0]
-    console.log(err)
     errRes(res , errMessage)
   }
 }

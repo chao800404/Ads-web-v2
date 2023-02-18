@@ -29,7 +29,6 @@ export const ContextProvider = (props:{children:JSX.Element[]}) => {
 
   const handleOnLoad = React.useCallback(()=>{
     setOnLoad(true)
-    console.log('run')
   },[])
 
   return (

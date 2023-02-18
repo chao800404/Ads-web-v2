@@ -11,10 +11,9 @@ export const CreativesBannerElement = () => {
       }
       <div className="template_demo-container webCreativeDemo_container">
       <Player
-        onEvent={(e)=> {
-          console.log(e === 'load')
+        onEvent={(e)=> 
           e === 'load' && setOnLoad(true)
-        }}
+        }
         src="https://assets3.lottiefiles.com/packages/lf20_9ciruyqz.json"  
         background="transparent"  
         speed={1}  
